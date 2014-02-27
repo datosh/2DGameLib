@@ -488,19 +488,19 @@ public class Game extends Canvas implements Runnable {
 		g.setColor(Color.GREEN);
 		
 		//Players collider
-		g.drawRect(player.getCollider().getX(), 
-				player.getCollider().getY(), 
-				player.getCollider().getWidth(), 
-				player.getCollider().getHeith());
+		g.drawRect((int)player.getCollider().getX(), 
+				(int)player.getCollider().getY(), 
+				(int)player.getCollider().getWidth(), 
+				(int)player.getCollider().getHeith());
 		
 		//Enemys collider
 		for(int i = 0; i < enemys.length; i++) {
 			for(int j = 0; j < enemys[i].length; j++) {
 				if(enemys[i][j].isAlive()) {
-					g.drawRect(enemys[i][j].getCollider().getX(), 
-							enemys[i][j].getCollider().getY(), 
-							enemys[i][j].getCollider().getWidth(), 
-							enemys[i][j].getCollider().getHeith());
+					g.drawRect((int)enemys[i][j].getCollider().getX(), 
+							(int)enemys[i][j].getCollider().getY(), 
+							(int)enemys[i][j].getCollider().getWidth(), 
+							(int)enemys[i][j].getCollider().getHeith());
 				}
 			}
 		}
@@ -511,20 +511,20 @@ public class Game extends Canvas implements Runnable {
 				if(!enemys[i][j].getProjectile().isAlive()) {
 					continue;
 				}
-				g.drawRect(enemys[i][j].getProjectile().getCollider().getX(), 
-						enemys[i][j].getProjectile().getCollider().getY(), 
-						enemys[i][j].getProjectile().getCollider().getWidth(), 
-						enemys[i][j].getProjectile().getCollider().getHeith());
+				g.drawRect((int)enemys[i][j].getProjectile().getCollider().getX(), 
+						(int)enemys[i][j].getProjectile().getCollider().getY(), 
+						(int)enemys[i][j].getProjectile().getCollider().getWidth(), 
+						(int)enemys[i][j].getProjectile().getCollider().getHeith());
 			}
 		}
 		
 		//Players projectile's collider
 		for(int i = 0; i < player.getProjectiles().length; i++) {
 			if(player.getProjectiles()[i].isAlive()) {
-				g.drawRect(player.getProjectiles()[i].getCollider().getX(), 
-						player.getProjectiles()[i].getCollider().getY(), 
-						player.getProjectiles()[i].getCollider().getWidth(), 
-						player.getProjectiles()[i].getCollider().getHeith());
+				g.drawRect((int)player.getProjectiles()[i].getCollider().getX(), 
+						(int)player.getProjectiles()[i].getCollider().getY(), 
+						(int)player.getProjectiles()[i].getCollider().getWidth(), 
+						(int)player.getProjectiles()[i].getCollider().getHeith());
 			}
 		}
 	}

@@ -4,8 +4,8 @@ import util.Point;
 
 
 public class ColliderBox extends Collider {
-	private int x, y;
-	private int width, height;
+	private double x, y;
+	private double width, height;
 	
 	public ColliderBox() {
 		x = 0; 
@@ -36,20 +36,20 @@ public class ColliderBox extends Collider {
 	}
 	
 	@Override
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
 	@Override
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 	
-	public int getWidth() {
+	public double getWidth() {
 		return width;
 	}
 	
-	public int getHeith() {
+	public double getHeith() {
 		return height;
 	}
 	
