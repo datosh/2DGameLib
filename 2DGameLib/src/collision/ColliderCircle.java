@@ -1,12 +1,14 @@
 package collision;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 import objects.GameObject;
 import util.Point;
 
 public class ColliderCircle extends Collider{
 	private Point center;
 	private double radius;
-	private GameObject attachedTo;
 	
 	/*
 	 * CONSTRUCTOR
@@ -55,8 +57,29 @@ public class ColliderCircle extends Collider{
 	 */
 	
 	public boolean overlaps(Collider c) {
+		if(c instanceof ColliderBox) {
+			
+		}
 		
+		if(c instanceof ColliderCircle) {
+			
+		}
 		
+		return false;
+	}
+	
+	/**
+	 * 
+	 * @param c The box in which the circle has to be
+	 * @return Returns true if the Circle is fully inside the Box
+	 */
+	public boolean inside(ColliderBox c) {
+		if(this.center.getX() - this.radius > c.getX()
+				&& this.center.getX() + this.radius < c.getX() + c.getWidth()
+				&& this.center.getY() - this.radius > c.getY() 
+				&& this.center.getY() + this.radius < c.getY() + c.getHeight()) {
+			return true;
+		}
 		return false;
 	}
 	
@@ -104,4 +127,36 @@ public class ColliderCircle extends Collider{
 		
 		return true;
 	}
+
+	@Override
+	public void setPosition(Point point) {
+		center = point;
+	}
+
+	@Override
+	public void setPosition(double x, double y) {
+		center.setX(x);
+		center.setY(y);		
+	}
+
+	@Override
+	public double getWidth() {
+		// TODO MAKE EXCEPTION
+		return 0;
+	}
+
+	@Override
+	public double getHeight() {
+		// TODO MAKE EXCEPTION
+		return 0;
+	}
+	
+
+	@Override
+	public void draw(Graphics g) {
+		g.setColor(DRAW_COLOR);
+		g.drawOval((int)(center.getX() - radius), (int)(center.getY() - radius), (int)(radius * 2), (int)(radius * 2));
+	}
 }
+	
+

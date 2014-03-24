@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 public class Game extends Canvas implements Runnable {
 	private static final long serialVersionUID = 1L;	//UniqueID. Needed for compatibility with older version (Not interesting for us) 
 
-	private final boolean DEBUG = false;
+	private final boolean DEBUG = true;
 	
 	public static final int WIDTH = 160;				//Width of the game's window (in pixel)
 	public static final int HEIGHT = WIDTH / 4 * 3;		//Calculate the height of the game's window using the width (current format 4:3)
@@ -491,7 +491,7 @@ public class Game extends Canvas implements Runnable {
 		g.drawRect((int)player.getCollider().getX(), 
 				(int)player.getCollider().getY(), 
 				(int)player.getCollider().getWidth(), 
-				(int)player.getCollider().getHeith());
+				(int)player.getCollider().getHeight());
 		
 		//Enemys collider
 		for(int i = 0; i < enemys.length; i++) {
@@ -500,7 +500,7 @@ public class Game extends Canvas implements Runnable {
 					g.drawRect((int)enemys[i][j].getCollider().getX(), 
 							(int)enemys[i][j].getCollider().getY(), 
 							(int)enemys[i][j].getCollider().getWidth(), 
-							(int)enemys[i][j].getCollider().getHeith());
+							(int)enemys[i][j].getCollider().getHeight());
 				}
 			}
 		}
@@ -514,7 +514,7 @@ public class Game extends Canvas implements Runnable {
 				g.drawRect((int)enemys[i][j].getProjectile().getCollider().getX(), 
 						(int)enemys[i][j].getProjectile().getCollider().getY(), 
 						(int)enemys[i][j].getProjectile().getCollider().getWidth(), 
-						(int)enemys[i][j].getProjectile().getCollider().getHeith());
+						(int)enemys[i][j].getProjectile().getCollider().getHeight());
 			}
 		}
 		
@@ -524,7 +524,7 @@ public class Game extends Canvas implements Runnable {
 				g.drawRect((int)player.getProjectiles()[i].getCollider().getX(), 
 						(int)player.getProjectiles()[i].getCollider().getY(), 
 						(int)player.getProjectiles()[i].getCollider().getWidth(), 
-						(int)player.getProjectiles()[i].getCollider().getHeith());
+						(int)player.getProjectiles()[i].getCollider().getHeight());
 			}
 		}
 	}
